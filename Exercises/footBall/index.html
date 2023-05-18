@@ -7,7 +7,9 @@
     <title>FootBall</title>
   </head>
   <body>
-    <select name="teams" id="teams-list" onchange="displayTeam();"></select>
+    <select name="teams" id="teams-list" onchange="displayTeam();">
+    
+    </select>
     <p id="selected-team-paragraph"></p>
 
     <script>
@@ -21,6 +23,7 @@
       ];
 
       const teamsList = document.querySelector("#teams-list");
+      const selectedTeamParagraph = document.querySelector("#selected-team-paragraph");
 
       function loadTeamsList() {
         for (const team of teams) {
@@ -34,6 +37,9 @@
       loadTeamsList();
 
       function displayTeam() {
+      selectedTeamParagraph.textContent = teamsList.value
+
+
         console.log(teamsList.value);
         
       }
